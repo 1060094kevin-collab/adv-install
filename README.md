@@ -1078,9 +1078,9 @@ Google does not specifically guarantee Shizuku or `rish`, so future behavior may
 
 ### Does the package need Developer Verification registration?
 
-The documented ADB exception does not require Developer Verification package registration.
+No. The documented ADB exception does not require Developer Verification package registration.
 
-The Shizuku-backed implementation remains subject to the qualification described above.
+Adv-install (Shizuku-backed implementation) remains subject to the qualification described above.
 
 ### Does adv-install use the consumer advanced flow?
 
@@ -1096,7 +1096,7 @@ A computer is not required for normal use after Shizuku has been configured thro
 
 ### Does adv-install download APKs?
 
-No. The APK must already be stored on the device.
+No. Adv-install handles only the installation process. The APK must already be stored on the device.
 
 ### Does adv-install install every APK?
 
@@ -1175,10 +1175,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. IN NO EVENT SHAL
 
 ## Official references
 
-* Android Developer Verification Documentation: <https://developer.android.com/developer-verification>
+* Android Developer Verification Documentation:
+<https://developer.android.com/developer-verification>
 * Android 16 QPR2 release notes:
 <https://developer.android.com/about/versions/16/qpr2/release-notes>
-* Shizuku System Framework: <https://shizuku.rikka.app/>
+* Shizuku System Framework:
+<https://shizuku.rikka.app/>
 * Shizuku Setup Guide:
 <https://shizuku.rikka.app/guide/setup/>  
 * Shizuku Downloads:
