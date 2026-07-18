@@ -1,4 +1,4 @@
-# adv-install
+# adv-install - Bypass Google Android Developer Verification (Non-Root)
 
 Install locally stored APKs from unverified or unregistered developers without root, a USB-connected computer, Android Developer Verification enrollment, or the consumer advanced-flow process.
 
@@ -167,7 +167,7 @@ The script does not bypass:
 * Manufacturer-specific installation restrictions
 * Application integrity checks performed after installation
 * Play Integrity API checks
-- Application licensing
+* Application licensing
 * Server-side authentication
 * Account requirements imposed by an application
 
