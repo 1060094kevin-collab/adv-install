@@ -102,8 +102,8 @@ echo "== Flag suppression verification =="
 : > "$PM_LOG"
 bash "$ROOT/adv-install" --no-grant --no-downgrade "$TMP/app target.apk" > "$TMP/no-flags.out"
 grep -q 'pm install -r ' "$PM_LOG"
-! grep -q -- ' -d ' "$PM_LOG"
-! grep -q -- ' -g ' "$PM_LOG"
+if grep -q -- ' -d ' "$PM_LOG"; then exit 1; fi
+if grep -q -- ' -g ' "$PM_LOG"; then exit 1; fi
 
 echo "== Directory split execution flow =="
 mkdir -p "$TMP/splits"
