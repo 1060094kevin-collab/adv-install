@@ -57,30 +57,62 @@ Installed app
 - calls `pm install` or `pm install-multiple` through `rish`;
 - removes local and remote temporary files after success, failure, or interruption.
 
+## Usage examples
+
+Install a single APK:
+
+```bash
+adv-install "/storage/emulated/0/Download/application.apk"
+```
+
+Install an `.apks` archive:
+
+```bash
+adv-install "/storage/emulated/0/Download/application.apks"
+```
+
+Install an `.xapk` archive:
+
+```bash
+adv-install "/storage/emulated/0/Download/application.xapk"
+```
+
+Install a `.zip` archive containing APK files:
+
+```bash
+adv-install "/storage/emulated/0/Download/application.zip"
+```
+
+Install a directory containing split APK files:
+
+```bash
+adv-install "/storage/emulated/0/Download/application-splits"
+```
+
+Fresh reinstall for the current Android user:
+
+```bash
+adv-install --fresh --package com.example.app "/storage/emulated/0/Download/application.apk"
+```
+
+See docs/usage.md for all options and archive behavior.
+
 ## Documentation
 
-- docs/scope.md
-- docs/installation.md
-- docs/usage.md
-- docs/technical-overview.md
-- docs/security-considerations.md
-- docs/troubleshooting.md
-- docs/faq.md
-- docs/maintenance.md
+- docs/scope.md - project goals, Developer Verification scope, and what the tool does not bypass.
+- docs/installation.md - Termux, Shizuku, `rish`, and first-time setup.
+- docs/usage.md - supported input types, options, examples, and archive behavior.
+- docs/technical-overview.md - staging, byte-count validation, shell identity checks, and Package Manager flow.
+- docs/security-considerations.md - APK trust, hash checks, Shizuku handling, and data behavior.
+- docs/troubleshooting.md - common setup and install failures.
+- docs/faq.md - common questions about Developer Verification, ADB-style installs, root, Play Protect, and split APKs.
+- docs/maintenance.md - updating, removing, testing, and release checklist.
 
 ## Non-goals
 
-`adv-install` does not:
+`adv-install` is not an APK downloader, APK store, malware scanner, root tool, Play Protect disabler, signature bypass, enterprise-policy bypass, or guarantee of future Android compatibility.
 
-- download APK files;
-- provide APK sources;
-- disable Play Protect;
-- bypass APK signatures;
-- bypass Android package parsing;
-- bypass update-signature checks;
-- bypass device-owner, work-profile, or enterprise policy;
-- grant root access;
-- guarantee compatibility with future Android or manufacturer changes.
+The APK must still pass Android's normal Package Manager checks, including signature validation, package parsing, compatibility requirements, user/device policy, and manufacturer restrictions. See docs/scope.md for the detailed boundary list.
 
 ## Install from this repository
 
@@ -121,13 +153,13 @@ Do not use this project to install malicious software, interfere with another pe
 
 ## Official references
 
-- Android Developer Verification: https://developer.android.com/developer-verification
-- Android release notes: https://developer.android.com/about/versions/16/qpr2/release-notes
-- Shizuku: https://shizuku.rikka.app/
-- Shizuku setup guide: https://shizuku.rikka.app/guide/setup/
-- Shizuku downloads: https://shizuku.rikka.app/download/
-- `rish` documentation: https://github.com/RikkaApps/Shizuku-API/blob/master/rish/README.md
-- Termux app: https://github.com/termux/termux-app
+- [Android Developer Verification](https://developer.android.com/developer-verification)
+- [Android release notes](https://developer.android.com/about/versions/16/qpr2/release-notes)
+- [Shizuku](https://shizuku.rikka.app/)
+- [Shizuku setup guide](https://shizuku.rikka.app/guide/setup/)
+- [Shizuku downloads](https://shizuku.rikka.app/download/)
+- [`rish` documentation](https://github.com/RikkaApps/Shizuku-API/blob/master/rish/README.md)
+- [Termux app](https://github.com/termux/termux-app)
 
 ## License
 
