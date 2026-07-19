@@ -12,7 +12,7 @@ The project is intended as an on-device shell installation route in response to 
 1. Install Termux and Shizuku on your Android device.
 2. Start Shizuku using wireless debugging.
 3. Export `rish` and `rish_shizuku.dex` from Shizuku.
-4. Follow the full setup guide in docs/installation.md.
+4. Follow the full setup guide in [docs/installation.md](https://github.com/austinsager/adv-install).
 5. Install a local APK:
 
 ```bash
@@ -95,24 +95,24 @@ Fresh reinstall for the current Android user:
 adv-install --fresh --package com.example.app "/storage/emulated/0/Download/application.apk"
 ```
 
-See docs/usage.md for all options and archive behavior.
+See [docs/usage.md](https://github.com/austinsager/adv-install) for all options and archive behavior.
 
 ## Documentation
 
-- docs/scope.md - project goals, Developer Verification scope, and what the tool does not bypass.
-- docs/installation.md - Termux, Shizuku, `rish`, and first-time setup.
-- docs/usage.md - supported input types, options, examples, and archive behavior.
-- docs/technical-overview.md - staging, byte-count validation, shell identity checks, and Package Manager flow.
-- docs/security-considerations.md - APK trust, hash checks, Shizuku handling, and data behavior.
-- docs/troubleshooting.md - common setup and install failures.
-- docs/faq.md - common questions about Developer Verification, ADB-style installs, root, Play Protect, and split APKs.
-- docs/maintenance.md - updating, removing, testing, and release checklist.
+- [docs/scope.md](https://github.com/austinsager/adv-install/blob/main/docs/scope.md) - project goals, Developer Verification scope, and what the tool does not bypass.
+- [docs/installation.md](https://github.com/austinsager/adv-install) - Termux, Shizuku, `rish`, and first-time setup.
+- [docs/usage.md](https://github.com/austinsager/adv-install) - supported input types, options, examples, and archive behavior.
+- [docs/technical-overview.md](https://github.com/austinsager/adv-install) - staging, byte-count validation, shell identity checks, and Package Manager flow.
+- [docs/security-considerations.md](https://github.com/austinsager/adv-install) - APK trust, hash checks, Shizuku handling, and data behavior.
+- [docs/troubleshooting.md](https://github.com/austinsager/adv-install) - common setup and install failures.
+- [docs/faq.md](https://github.com/austinsager/adv-install) - common questions about Developer Verification, ADB-style installs, root, Play Protect, and split APKs.
+- [docs/maintenance.md](https://github.com/austinsager/adv-install) - updating, removing, testing, and release checklist.
 
 ## Non-goals
 
 `adv-install` is not an APK downloader, APK store, malware scanner, root tool, Play Protect disabler, signature bypass, enterprise-policy bypass, or guarantee of future Android compatibility.
 
-The APK must still pass Android's normal Package Manager checks, including signature validation, package parsing, compatibility requirements, user/device policy, and manufacturer restrictions. See docs/scope.md for the detailed boundary list.
+The APK must still pass Android's normal Package Manager checks, including signature validation, package parsing, compatibility requirements, user/device policy, and manufacturer restrictions. See [docs/scope.md](https://github.com/austinsager/adv-install/blob/main/docs/scope.md) for the detailed boundary list.
 
 ## Install from this repository
 
@@ -163,7 +163,7 @@ Do not use this project to install malicious software, interfere with another pe
 
 ## License
 
-Distributed under the MIT License. See LICENSE.
+Distributed under the MIT License. See [LICENSE](https://github.com/austinsager/adv-install/blob/main/LICENSE).
 
 ## Disclaimer
 
