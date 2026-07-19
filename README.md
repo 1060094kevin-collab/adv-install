@@ -119,13 +119,20 @@ Do not use this project to install malicious software, interfere with another pe
 
 ## Official references
 
-- Android Developer Verification: [https://developer.android.com/developer-verification](https://developer.android.com/developer-verification)
-- Android release notes: [https://developer.android.com/about/versions/16/qpr2/release-notes](https://developer.android.com/about/versions/16/qpr2/release-notes)
-- Shizuku: [https://shizuku.rikka.app/](https://shizuku.rikka.app)
-- Shizuku setup guide: [https://shizuku.rikka.app/guide/setup/](https://shizuku.rikka.app/guide/setup/)
-- Shizuku downloads: [https://shizuku.rikka.app/download/](https://shizuku.rikka.app/download/)
-- `rish` documentation: [https://github.com/RikkaApps/Shizuku-API/blob/master/rish/README.md](https://github.com/RikkaApps/Shizuku-API/blob/master/rish/README.md)
-- Termux app: [https://github.com/termux/termux-app](https://github.com/termux/termux-app)
+- Android Developer Verification:
+[https://developer.android.com/developer-verification](https://developer.android.com/developer-verification)
+- Android release notes:
+[https://developer.android.com/about/versions/16/qpr2/release-notes](https://developer.android.com/about/versions/16/qpr2/release-notes)
+- Shizuku:
+[https://shizuku.rikka.app/](https://shizuku.rikka.app)
+- Shizuku setup guide:
+[https://shizuku.rikka.app/guide/setup/](https://shizuku.rikka.app/guide/setup/)
+- Shizuku downloads:
+[https://shizuku.rikka.app/download/](https://shizuku.rikka.app/download/)
+- `rish` documentation:
+[https://github.com/RikkaApps/Shizuku-API/blob/master/rish/README.md](https://github.com/RikkaApps/Shizuku-API/blob/master/rish/README.md)
+- Termux app:
+[https://github.com/termux/termux-app](https://github.com/termux/termux-app)
 
 ## License
 
